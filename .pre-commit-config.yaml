@@ -1,0 +1,55 @@
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v1.4.0
+    hooks:
+    -   id: check-ast
+        language_version: python3
+    -   id: check-json
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+    -   id: mixed-line-ending
+        args:
+          - --fix=lf
+-   repo: git://github.com/pre-commit/mirrors-pylint
+    rev: v1.9.1
+    hooks:
+    -   id: pylint
+        args:
+        - --rcfile=.pylintrc
+        language_version: python3
+        exclude: >
+            (?x)^(
+                docs/.+|
+                punch_version.py|
+                punch_config.py|
+            )$
+-   repo: git://github.com/asottile/reorder_python_imports
+    rev: v1.0.1
+    hooks:
+    -   id: reorder-python-imports
+        language_version: python3
+        exclude: docs/*
+-   repo: git://github.com/FalconSocial/pre-commit-mirrors-pep257
+    rev: v0.3.3
+    hooks:
+    -   id: pep257
+        args:
+        - --ignore=D301,D203
+        language_version: python3
+        exclude: >
+            (?x)^(
+                docs/.+|
+                punch_version.py|
+                punch_config.py|
+            )$
+-   repo: https://github.com/ambv/black
+    rev: stable
+    hooks:
+      -   id: black
+          args: [--line-length=120, --safe]
+          python-version: python3.6
+          exclude: >
+            (?x)^(
+                docs/.+|
+                punch_version.py|
+                punch_config.py
+            )$

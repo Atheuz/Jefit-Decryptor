@@ -1,0 +1,44 @@
+[MESSAGES CONTROL]
+
+# Disable the message, report, category or checker with the given id(s).
+disable=import-error,too-few-public-methods
+#,duplicate-code,missing-docstring,too-few-public-methods,
+#        bad-builtin,super-init-not-called,star-args,unused-import,broad-except,
+#        invalid-name,unused-argument,line-too-long,unused-variable,
+#        stop-iteration-return,no-else-return,ungrouped-imports,
+#        useless-super-delegation,no-self-use,unnecessary-lambda,wrong-import-position,
+#        redefined-outer-name,bad-continuation
+
+[VARIABLES]
+
+# Tells whether we should check for unused import in __init__ files.
+init-import=no
+
+# A regular expression matching the name of dummy variables (i.e. expectedly
+# not used).
+dummy-variables-rgx=_|__
+
+[BASIC]
+
+# Good variable names which should always be accepted, separated by a comma
+good-names=i,j,k,_,__
+
+# Regular expression matching correct constant names
+const-rgx=(([A-Za-z_][A-Za-z0-9_]*)|(__.*__))$
+
+# Regular expression matching correct function names
+function-rgx=(test_)?[a-z_][a-z0-9_]{2,30}$
+
+[REPORTS OPTIONS]
+
+# Disable reports
+reports=no
+
+[DESIGN]
+
+# Allow up to 25 locals in a scope.
+max-locals=25
+# Allow up to 10 parameters for functions.
+max-args=15
+# Allow up to 15 instance attributes
+max-attributes=15
